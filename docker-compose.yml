@@ -1,0 +1,13 @@
+app-web:  
+  build: ./web
+  ports:
+    - "8081:8080"
+  links:
+    - app-db
+    
+app-db:  
+  build: ./db
+  ports:
+    - "5432:5432"
+  volumes:
+    - /Users/rjoffray/Library/Application\ Support/Postgres/var-13:/var/lib/postgresql/data
