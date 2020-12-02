@@ -21,7 +21,7 @@ You will notice that the data will be in your local db folder and represents the
 Using docker the resulting containers can be archived and transported to another operating system running Docker like this:
 
 ``` bash
-docker image save oaklabs/example-node-mysql mysql node phpmyadmin/phpmyadmin | gzip -c > example-node-mysql.tar.gz
+docker image save example-tomcat-postgres_app-web example-tomcat-postgres_app-db | gzip -c > example-tomcat-postgres.tar.gz
 ```
 
 ## Copy docker-compose.yml
@@ -35,3 +35,7 @@ docker-compose up --build
 ## Importing containers into remote Docker install
 
 On your target docker install with Docker running , you can perform this command to install the containers into a new docker install.
+
+``` bash
+gunzip -c example-tomcat-postgres.tar.gz | docker load
+```

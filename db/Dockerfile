@@ -1,8 +1,8 @@
 FROM postgres:9.4  
 
-ENV POSTGRES_USER admin  
-ENV POSTGRES_PASSWORD password  
-ENV POSTGRES_DB rjoffray  
+ENV POSTGRES_USER tomcat  
+ENV POSTGRES_PASSWORD tomcat  
+ENV POSTGRES_DB postgres  
 
 
 ADD pg_hba.conf /etc/postgresql/9.4/main/
